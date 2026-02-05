@@ -1662,7 +1662,7 @@ namespace drachtio {
 
                     case sip_method_cancel:
                     {
-                        std::shared_ptr<PendingRequest_t> p = m_pPendingRequestController->findInviteByCallId( sip->sip_call_id->i_id ) ;
+                        std::shared_ptr<PendingRequest_t> p = m_pPendingRequestController->findInviteByCallIdAndBranch( sip ) ;
                         if( p ) {
                             DR_LOG(log_info) << "received quick cancel for invite that is out to client for disposition: " << sip->sip_call_id->i_id  ;
 
